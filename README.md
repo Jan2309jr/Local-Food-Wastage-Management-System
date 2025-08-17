@@ -55,7 +55,7 @@ This project develops a **centralized system** to:
 
 ---
 ## Live Web App 
-[Click here to view the app](https://local-food-waste-management-app.streamlit.app/EDA_Analysis)
+[Click here to view the app](https://local-food-waste-management-app.streamlit.app/)
 
 
 ---
