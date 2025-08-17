@@ -59,7 +59,7 @@ This project develops a **centralized system** to:
 
 
 ---
-## How to run
+## How to run locally
 
 ```bash
 # 1) Install all dependancies
