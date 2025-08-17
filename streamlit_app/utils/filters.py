@@ -1,9 +1,8 @@
-import pandas as pd
 from .query_functions import run_sql
 
 def get_filter_options():
     cities = run_sql('SELECT DISTINCT City FROM providers ORDER BY City')['City'].dropna().tolist()
-    provider_types = run_sql('SELECT DISTINCT Type AS Provider_Type FROM providers ORDER BY Provider_Type')['Provider_Type'].tolist()
+    provider_types = run_sql('SELECT DISTINCT Provider_Type FROM providers ORDER BY Provider_Type')['Provider_Type'].tolist()
     food_types = run_sql('SELECT DISTINCT Food_Type FROM food_listings ORDER BY Food_Type')['Food_Type'].tolist()
     meal_types = run_sql('SELECT DISTINCT Meal_Type FROM food_listings ORDER BY Meal_Type')['Meal_Type'].tolist()
     return {

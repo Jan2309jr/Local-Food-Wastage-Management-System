@@ -1,4 +1,3 @@
-import os
 import pandas as pd
 from .db_connection import get_connection
 
@@ -11,7 +10,6 @@ def run_sql(query: str, params: dict | None = None) -> pd.DataFrame:
         con.close()
 
 def providers_receivers_by_city() -> pd.DataFrame:
-    # SQLite doesn't support FULL OUTER JOIN; use UNION of LEFT JOINs
     q = '''
     SELECT p.City AS City,
            COUNT(p.Provider_ID) AS Providers_Count,
@@ -46,7 +44,12 @@ def top_provider_types() -> pd.DataFrame:
     return run_sql(q)
 
 def provider_contacts_by_city(city: str) -> pd.DataFrame:
-    q = 'SELECT Name, Type, Address, City, Contact FROM providers WHERE City = :city ORDER BY Name'
+    q = '''
+    SELECT Name, Provider_Type, Address, City, Contact
+    FROM providers
+    WHERE City = :city
+    ORDER BY Name
+    '''
     return run_sql(q, {'city': city})
 
 def top_receivers_by_claims() -> pd.DataFrame:
