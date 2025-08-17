@@ -8,5 +8,5 @@ venv/
 # Streamlit
 .streamlit/
 
-# SQLite
-*.db
+# # SQLite
+# *.db
