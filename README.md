@@ -247,5 +247,3 @@ pythom -m streamlit run streamlit_app/app.py
 ## 📌 Technical Tags
 
 `Python` `SQL` `Streamlit` `Data Analysis` `Food Management` `Waste Reduction` `Social Good`
-
----
